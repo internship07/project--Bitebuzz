@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style1.css">
+  <title>BiteBuzz</title>
+</head>
+<body>
+  <div class="sidebar">
+    <h1 class="logo1">BiteBuzz</h1>
+    <div class="sidebar-menus">
+      <a href="homepage.html" class="active"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+      <a href="menu.html"><ion-icon name="menu-outline"></ion-icon>Menu</a>
+      <a href="order-confirmation.html"><ion-icon name="receipt-outline"></ion-icon>Order</a>
+      <a href="about-us.html"><ion-icon name="information-circle-outline"></ion-icon>About Us</a>
+      <a href="contact-us.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+      <a href="feedback.html"><ion-icon name="chatbox-ellipses-outline"></ion-icon>Feedback</a>
+    </div>
+    <div class="sidebar-logout">
+      <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+    </div>  
+  </div>
+
+  <!--main-->
+  <div class="main">
+    <!--main navbar-->
+    <div class="main-navbar">
+      <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+      <div class="search">
+        <input type="text" placeholder="Search Restaurants...." id="search-input" autocomplete="off" required>
+        <button class="search-btn">Search</button>
+      </div>  
+      <div class="profile">
+        <a class="cart" href="shopping-cart.html">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <a class="user" href="user-profile.html"><ion-icon name="person-outline"></ion-icon></a>
+      </div>
+    </div>         
+
+    <!--main highlight-->
+    <div class="main-highlight">
+      <div class="main-header">
+        <h2 class="main-title">Recommendations</h2>
+      </div>
+      <!--highlight menu-->
+      <div class="highlight-wrapper">
+        <div class="highlight-card">
+          <img class="highlight-img" src="images/ic-paradise/coconut-ic.jpeg">
+          <div class="highlight-desc">
+            <h4>Coconut Ice Cream</h4>
+            <p>Rs.90</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <img class="highlight-img" src="images/puzzles/cold-coffee.jpeg">
+          <div class="highlight-desc">
+            <h4>Cold Coffee</h4>
+            <p>Rs.120</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <img class="highlight-img" src="images/niyaz/chicken-biryani.jpeg">
+          <div class="highlight-desc">
+            <h4>Chicken Biryani</h4>
+            <p>Rs.270</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <img class="highlight-img" src="images/drnk-lab/bbq-chicken-pizza.jpeg">
+          <div class="highlight-desc">
+            <h4>Barbeque Chicken Pizza</h4>
+            <p>Rs.349</p>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!--main menu/order-->
+    <div class="main-menus">
+      <div class="main-filter">
+        <div>
+          <h2 class="main-title">Menu <br>Category</h2>
+        </div>
+        <div class="filter-wrapper">
+          <a href="starters-menu.html" class="menu-link">
+          <div class="filter-card">
+            <div class="filter-icon">
+              <ion-icon name="restaurant-outline"></ion-icon>
+            </div>
+            <p>Starters</p>
+          </div>  
+          </a>
+          <a href="burger-menu.html" class="menu-link">
+          <div class="filter-card">
+            <div class="filter-icon">
+              <ion-icon name="fast-food-outline"></ion-icon>
+            </div>
+            <p>Burger</p>
+          </div>
+          </a>
+          <a href="pizza-menu.html" class="menu-link">
+          <div class="filter-card">
+            <div class="filter-icon">
+              <ion-icon name="pizza-outline"></ion-icon>
+            </div>
+            <p>Pizza</p>
+          </div>
+          </a>
+          <a href="juice-menu.html" class="menu-link">
+          <div class="filter-card">
+            <div class="filter-icon">
+              <ion-icon name="wine-outline"></ion-icon>
+            </div>
+            <p>Juice</p>
+          </div>
+          </a>
+          <a href="dessert-menu.html" class="menu-link">
+          <div class="filter-card">
+            <div class="filter-icon">
+              <ion-icon name="ice-cream-outline"></ion-icon>
+            </div>
+            <p>Desserts</p>
+          </div>
+          </a>
+          <a href="tea-menu.html" class="menu-link">
+          <div class="filter-card">
+            <div class="filter-icon">
+              <ion-icon name="cafe-outline"></ion-icon>
+            </div>
+            <p>Coffee</p>
+          </div>
+          </a>
+          <a href="seafood-menu.html" class="menu-link">
+          <div class="filter-card">
+            <div class="filter-icon">
+              <ion-icon name="fish-outline"></ion-icon>
+            </div>
+            <p>Seafood</p>
+          </div>
+          </a>
+          <a href="biryani-menu.html" class="menu-link">
+          <div class="filter-card">
+            <div class="filter-icon">
+              <ion-icon name="restaurant-outline"></ion-icon>
+            </div>
+            <p>Biryani</p>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Restaurant Section -->
+      <hr class="divider">     
+      <div class="restaurant-section">
+        <h2 class="main-title">Choose a Restaurant</h2>
+        <p id="no-results-message" style="display: none; text-align: center; color: red;">No results found</p>
+        <div class="restaurant-wrapper">
+          <a href="sigdi-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="The Sigdi">
+            <img src="images/the-sigdi/the-sigdi.jpg" alt="Restaurant A">
+              <div class="restaurant-info">
+                <h4>The Sigdi</h4>
+                <p class="rating">⭐ 4.5/5</p>
+                <p class="cuisine">Cuisine: North Indian, Chinese</p>
+                <p class="price-range">Price Range: ₹500 - ₹1000</p>
+                <p class="reviews">200 Reviews</p>
+                <div class="reviews">
+                  <p>“The butter chicken was still hot when delivered. Amazing packaging!”</p>
+                  <p>“Quick delivery and the food tasted fresh and delicious.”</p>
+                  <p>“Great portion sizes, but delivery was slightly delayed.”</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="drnk-lab-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="Drnk Lab">
+            <img src="images/drnk-lab/drnk lab.jpg" alt="Restaurant B">
+            <div class="restaurant-info">
+              <h4>Drnk Lab</h4>
+              <p class="rating">⭐ 4.2/5</p>
+              <p class="cuisine">Cuisine: Beverages, Snacks</p>
+              <p class="price-range">Price Range: ₹300 - ₹700</p>
+              <p class="reviews">100 Reviews</p>
+              <div class="reviews">
+                <p>“The coffee was perfectly brewed and arrived in spill-proof packaging.”</p>
+                <p>“Snacks were fresh and crispy. Loved the attention to detail!”</p>
+                <p>“Delivery was fast, but the drinks could have been colder.”</p>
+              </div>
+            </div>
+          </div>
+          </a>
+          <a href="ic-paradise-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="Ice-Cream Paradise">
+            <img src="images/ic-paradise/icparadise.jpeg" alt="Restaurant C">
+            <div class="restaurant-info">
+              <h4>Ice-Cream Paradise</h4>
+              <p class="rating">⭐ 4.8/5</p>
+              <p class="cuisine">Cuisine: Desserts, Ice Cream</p>
+              <p class="price-range">Price Range: ₹100 - ₹500</p>
+              <p class="reviews">50 Reviews</p>
+              <div class="reviews">
+                <p>“The ice cream was delivered in perfect condition, still frozen!”</p>
+                <p>“Loved the variety of flavors. Packaging was eco-friendly too.”</p>
+                <p>“Quick delivery and the sundaes were delicious!”</p>
+              </div>
+            </div>
+          </div>
+          </a>
+          <a href="niyaz-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="Hotel Niyaz">
+            <img src="images/niyaz/hotelniyaz.jpg" alt="Restaurant D">
+            <div class="restaurant-info">
+              <h4>Hotel Niyaz</h4>
+              <p class="rating">⭐ 4.0/5</p>
+              <p class="cuisine">Cuisine: Indian, Mughlai</p>
+              <p class="price-range">Price Range: ₹400 - ₹800</p>
+              <p class="reviews">150 Reviews</p>
+              <div class="reviews">
+                <p>“The biryani was flavorful and the packaging was leak-proof.”</p>
+                <p>“The kebabs were juicy and perfectly spiced. Highly recommend!”</p>
+                <p>“Great taste, but the portion sizes were a bit small.”</p>
+              </div>
+            </div> 
+          </div>
+          </a>
+          <a href="mcd-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="McDonald's">
+            <img src="images/mcdonald's/mcdonald.jpeg" alt="Restaurant E">
+            <div class="restaurant-info">
+              <h4>McDonald's</h4>
+              <p class="rating">⭐ 4.3/5</p>
+              <p class="cuisine">Cuisine: Fast Food, Burgers</p>
+              <p class="price-range">Price Range: ₹200 - ₹600</p>
+              <p class="reviews">300 Reviews</p>
+              <div class="reviews">
+                <p>“The fries were crispy and the burgers were fresh. Loved it!”</p>
+                <p>“Quick delivery, but the drinks were a bit warm.”</p>
+                <p>“Great value for money. The combo meals are a steal!”</p>
+              </div>
+            </div>
+          </div>
+          </a>
+          <a href="kfc-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="KFC">
+            <img src="images//kfc/kfc.jpeg" alt="Restaurant F">
+            <div class="restaurant-info">
+              <h4>KFC</h4>
+              <p class="rating">⭐ 4.6/5</p>
+              <p class="cuisine">Cuisine: Fast Food, Fried Chicken</p>
+              <p class="price-range">Price Range: ₹250 - ₹700</p>
+              <p class="reviews">250 Reviews</p>
+              <div class="reviews">
+                <p>“The chicken was crispy and juicy. Loved the packaging!”</p>
+                <p>“Fast delivery, but the sides could have been warmer.”</p>
+                <p>“Great taste, but a bit on the pricier side.”</p>
+              </div>
+            </div>
+          </div>
+          </a>
+          <a href="pizzahut-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="Pizza Hut">
+            <img src="images/pizzahut/pizzahut.jpeg" alt="Restaurant G">
+            <div class="restaurant-info">
+              <h4>Pizza Hut</h4>
+              <p class="rating">⭐ 4.7/5</p>
+              <p class="cuisine">Cuisine: Italian, Pizza</p>
+              <p class="price-range">Price Range: ₹300 - ₹800</p>
+              <p class="reviews">180 Reviews</p>
+              <div class="reviews">
+                <p>“The pizza was hot and cheesy. Loved the crust!”</p>
+                <p>“Quick delivery, but the sides were a bit soggy.”</p>
+                <p>“Great variety of toppings. Highly recommend the stuffed crust!”</p>
+              </div>
+            </div>
+          </div>
+          </a>
+          <a href="puzzles-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="Puzzles Cafe">
+            <img src="images/puzzles/puzzles.jpg" alt="Restaurant H">
+            <div class="restaurant-info">
+              <h4>Puzzles Cafe</h4>
+              <p class="rating">⭐ 4.1/5</p>
+              <p class="cuisine">Cuisine: Cafe, Snacks</p>
+              <p class="price-range">Price Range: ₹150 - ₹400</p>
+              <p class="reviews">90 Reviews</p>
+              <div class="reviews">
+                <p>“The sandwiches were fresh and the coffee was perfect!”</p>
+                <p>“Loved the ambiance, but the delivery took a bit longer.”</p>
+                <p>“Great place for a quick bite. The pastries are a must-try!”</p>
+              </div>
+            </div>
+          </div>
+          </a>
+          <a href="moonlight-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="Hotel Moonlight">
+            <img src="images/moonlight/monlight.jpeg" alt="Restaurant I">
+            <div class="restaurant-info">
+              <h4>Hotel Moonlight</h4>
+              <p class="rating">⭐ 4.4/5</p>
+              <p class="cuisine">Cuisine: Indian, Continental</p>
+              <p class="price-range">Price Range: ₹500 - ₹1200</p>
+              <p class="reviews">110 Reviews</p>
+              <div class="reviews">
+                <p>“The biryani was aromatic and perfectly cooked. Loved the flavors!”</p>
+                <p>“The kebabs were juicy and tender. Highly recommend the chicken tikka!”</p>
+                <p>“The butter naan paired perfectly with the rich and creamy gravies.”</p>
+              </div>
+            </div>
+          </div>
+          </a>
+          <a href="ayodhya-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="Ayodhya Restaurant">
+            <img src="images/ayodhya-restaurant/ayodhya-restaurant.jpg" alt="Restaurant J">
+            <div class="restaurant-info">
+              <h4>Ayodhya Restaurant</h4>
+              <p class="rating">⭐ 4.5/5</p>
+              <p class="cuisine">Cuisine: Indian, Vegetarian</p>
+              <p class="price-range">Price Range: ₹200 - ₹600</p>
+              <p class="reviews">130 Reviews</p>
+              <div class="reviews">
+                <p>“The thali was delicious and very filling. Great value for money!”</p>
+                <p>“Loved the variety of vegetarian options. Quick delivery!”</p>
+                <p>“Great taste, but the spice level was a bit too high for me.”</p>
+              </div>
+            </div>
+          </div>
+          </a>
+          <a href="only-fish-menu.html" class="restaurant-link">
+          <div class="restaurant-card" data-restaurant="Only Fish">
+            <img src="images/only-fish/onlyfish.jpeg" alt="Restaurant K">
+            <div class="restaurant-info">
+              <h4>Only Fish</h4>
+              <p class="rating">⭐ 4.9/5</p>
+              <p class="cuisine">Cuisine: Seafood, Fish</p>
+              <p class="price-range">Price Range: ₹300 - ₹900</p>
+              <p class="reviews">160 Reviews</p>
+              <div class="reviews">
+                <p>“The fish curry was flavorful and the fish fry was crispy!”</p>
+                <p>“Loved the variety of seafood options. Quick delivery!”</p>
+                <p>“Great taste, but a bit on the pricier side.”</p>
+              </div>  
+            </div>
+          </div> 
+          </a>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <!-- Logout Confirmation Modal -->
+  <div id="logout-modal" class="modal">
+    <div class="modal-content">
+      <h3>Are you sure you want to logout?</h3>
+      <div class="modal-actions">
+        <button id="logout-cancel" class="modal-btn">Cancel</button>
+        <button id="logout-yes" class="modal-btn">Logout</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    //document.getElementById('logout-yes').addEventListener('click', function() {
+    // Redirect to the login page or perform logout action
+      //window.location.href = 'login.html';
+    //});
+    document.getElementById('logout-cancel').addEventListener('click', function() {
+      // Close the modal
+      document.getElementById('logout-modal').style.display = 'none';
+    });
+    document.querySelector('.sidebar-logout a').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent default link behavior
+      document.getElementById('logout-modal').style.display = 'flex'; // Show the modal
+    });
+
+   document.getElementById("search-input").addEventListener("input", function () {
+    let searchQuery = this.value.toLowerCase().trim();
+    let restaurantList = document.querySelector(".restaurant-list"); // Restaurant container
+    let restaurantCards = Array.from(document.querySelectorAll(".restaurant-card")); // Convert NodeList to array
+    let noResultsMessage = document.getElementById("no-results-message"); // Reference the message element
+
+    let matchedCards = [];
+    
+    restaurantCards.forEach(card => {
+        let restaurantName = card.getAttribute("data-restaurant").toLowerCase();
+        
+        if (restaurantName.includes(searchQuery)) {
+            card.style.display = "flex"; // Ensure it's visible
+            matchedCards.push(card); // Store matching cards
+        } else {
+            card.style.display = "none"; // Hide non-matching restaurants
+        }
+    });
+
+    // Reorder matched results to appear at the top
+    restaurantList.innerHTML = ""; // Clear the container
+    matchedCards.forEach(card => restaurantList.appendChild(card)); // Add matching ones first
+
+    // Show or hide "No results found" message
+    if (matchedCards.length === 0) {
+        noResultsMessage.style.display = "block"; // Show message when no matches
+    } else {
+        noResultsMessage.style.display = "none"; // Hide message when matches exist
+    }
+   });
+   
+  
+  </script>
+  <script src="script1.js"></script>
+  <script src="logout1.js"></script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</html>
