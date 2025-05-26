@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style1.css">
+  <title>BiteBuzz</title>
+</head>
+<body>   
+  <div class="sidebar">
+    <h1 class="logo1">BiteBuzz</h1>
+    <div class="sidebar-menus">
+      <a href="homepage.html" class="active"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+      <a href="menu.html"><ion-icon name="menu-outline"></ion-icon>Menu</a>
+      <a href="order-confirmation.html"><ion-icon name="receipt-outline"></ion-icon>Order</a>
+      <a href="about-us.html"><ion-icon name="information-circle-outline"></ion-icon>About Us</a>
+      <a href="contact-us.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+      <a href="feedback.html"><ion-icon name="chatbox-ellipses-outline"></ion-icon>Feedback</a>
+    </div>
+    <div class="sidebar-logout">
+      <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+    </div>  
+  </div>
+
+    <!--main-->
+  <div class="main">
+      <!--main navbar-->
+    <div class="main-navbar">
+      <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+      <div class="search">
+        <input type="text" placeholder="What you want to eat?" id="search-input" autocomplete="off" required>
+        <button class="search-btn">Search</button>
+      </div>  
+       
+      <div class="profile">
+        <a class="cart" href="shopping-cart.html" onclick="updateCartCount()">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <a class="user" href="user-profile.html"><ion-icon name="person-outline"></ion-icon></a>
+      </div>
+    </div>  
+ 
+    
+    <!-- Choose Order Section -->
+    <hr class="divider">
+    <div class="main-detail" id="choose-order-section">
+      <h2 class="main-title">Choose Order</h2>
+      <div class="detail-wrapper" id="menu-items">
+        <div class="detail-card">
+          <img class="detail-img" src="images/ayodhya-restaurant/paneer-tikka.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Paneer Tikka</h4>
+              <p class="detail-sub">Soft paneer cubes marinated in spiced yogurt and grilled with vegetables.</p>
+              <p class="price">Rs.250</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Paneer Tikka',250)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/ayodhya-restaurant/veg-manch.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Manchurian</h4>
+             <p class="detail-sub">Crispy vegetable balls tossed in a tangy and spicy Manchurian sauce.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Manchurian', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/hara-kabab.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Hara Bhara Kabab</h4>
+             <p class="detail-sub">A healthy kabab made with spinach, green peas, and spices, shallow-fried to perfection.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Hara Bhara Kabab', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/dal-makhani.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Dal Makhani</h4>
+             <p class="detail-sub">A creamy and rich lentil dish cooked with butter and aromatic spices.</p>
+             <p class="price">Rs.220</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Dal Makhani', 220)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/paneer-butter.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Butter Masala</h4>
+             <p class="detail-sub">Cottage cheese cooked in a creamy tomato and butter gravy, flavored with spices..</p>
+             <p class="price">Rs.250</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Butter Masala', 250)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/aloo-gobhi.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Aloo Gobi</h4>
+             <p class="detail-sub">A classic Indian dish made with potatoes and cauliflower, cooked with spices.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Aloo Gobi', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/bhindi-masala.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Bhindi Masala</h4>
+             <p class="detail-sub">Fresh okra cooked with onions, tomatoes, and spices, offering a flavorful vegetarian dish.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Bhindi Masala', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/veg-kofta-curry.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Kofta Curry</h4>
+             <p class="detail-sub">Soft vegetable dumplings cooked in a rich and creamy curry.</p>
+             <p class="price">Rs.240</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Kofta Curry', 240)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/veg-biryani.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Biryani</h4>
+             <p class="detail-sub">Aromatic basmati rice cooked with fresh vegetables, spices, and herbs.</p>
+             <p class="price">Rs.250</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Biryani', 250)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/jeera-rice.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Jeera Rice</h4>
+             <p class="detail-sub">Steamed basmati rice flavored with cumin seeds and ghee.</p>
+             <p class="price">Rs.150</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Jeera Rice', 150)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/butter-naan.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Butter Naan</h4>
+             <p class="detail-sub">Soft Indian bread brushed with butter, perfect for curries.</p>
+             <p class="price">Rs.40</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Butter Naan', 40)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/garlic-naan.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Garlic Naan</h4>
+             <p class="detail-sub">Naan topped with minced garlic and butter, served hot.</p>
+             <p class="price">Rs.60</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Garlic Naan', 60)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/tandoori-roti.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Tandoori Roti</h4>
+             <p class="detail-sub">Whole wheat flatbread cooked in a tandoor, served fresh.</p>
+             <p class="price">Rs.30</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Tandoori Roti', 30)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/gulab-jamun.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Gulab Jamun</h4>
+             <p class="detail-sub">Soft and spongy milk-based dumplings soaked in sugar syrup.</p>
+             <p class="price">Rs.80</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Gulab Jamun', 80)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ayodhya-restaurant/rasgulla.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Rasgulla</h4>
+             <p class="detail-sub">Spongy and juicy cottage cheese balls soaked in sugar syrup.</p>
+             <p class="price">Rs.90</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Rasgulla', 90)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/drnk-lab/aloo-burger.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Aloo Burger</h4>
+              <p class="detail-sub">A vegetarian burger with a crispy potato patty, fresh veggies, and flavorful sauces, served in a soft bun.</p>
+              <p class="price">Rs.120</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Aloo Burger', 120)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/drnk-lab/chicken-tandoorib.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Tandoori Burger</h4>
+             <p class="detail-sub">Juicy chicken patty marinated in tandoori spices, grilled to perfection, and served with fresh toppings and sauces in a toasted bun.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Tandoori Burger', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/paneer-burger.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Burger</h4>
+             <p class="detail-sub">A delicious burger with a crispy paneer patty, fresh vegetables, and tangy sauces, perfect for vegetarians.</p>
+             <p class="price">Rs.160</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Burger', 160)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/chicken-sand.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Chilli Sandwich</h4>
+             <p class="detail-sub">Spicy sandwich filled with tender chicken, chili sauce, and fresh veggies, served between toasted bread slices.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Chilli Sandwich', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/corn-sand.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Corn Cheese Sandwich</h4>
+             <p class="detail-sub">Creamy sandwich made with sweet corn, melted cheese, and a hint of spices, grilled to golden perfection.</p>
+             <p class="price">Rs.185</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Corn Cheese Sandwich', 185)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/chick-chilli-pizza.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Chilli Pizza [8 Inch]</h4>
+             <p class="detail-sub">Flavorful pizza topped with spicy chicken, chili sauce, and melted cheese on a crispy crust.</p>
+             <p class="price">Rs.339</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Chilli Pizza [8 Inch]', 339)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/bbq-chicken-pizza.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Barbeque Chicken Pizza [8 Inch]</h4>
+             <p class="detail-sub">Smoky pizza topped with tender barbeque chicken, onions, and a generous layer of cheese.</p>
+             <p class="price">Rs.349</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Chilli Pizza [8 Inch]', 349)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/crispy-chicken.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Hot And Crispy Chicken</h4>
+             <p class="detail-sub">Crispy fried chicken with a golden crust and juicy interior, seasoned with a blend of spices.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Hot And Crispy Chicken', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/paneer-taco.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Taco</h4>
+             <p class="detail-sub">Soft taco filled with marinated paneer, fresh veggies, and a tangy sauce, perfect for a quick bite.</p>
+             <p class="price">Rs.175</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Taco', 175)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/zinger-croll.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Zinger Chicken Roll</h4>
+             <p class="detail-sub">Crispy chicken roll wrapped in a soft tortilla, filled with fresh veggies and a zesty sauce.</p>
+             <p class="price">Rs.199</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Zinger Chicken Roll', 199)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/french-fries.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Masala French Fries</h4>
+             <p class="detail-sub">Crispy golden fries tossed in a flavorful masala seasoning, perfect as a snack or side dish.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Masala French Fries', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/cheese-balls.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Cheese Ball</h4>
+             <p class="detail-sub">Crispy on the outside and cheesy on the inside, these chicken cheese balls are a delightful snack.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Cheese Ball', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/mango-moito.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mango Mojito</h4>
+             <p class="detail-sub">Refreshing drink made with fresh mango, mint, lime, and soda, perfect for summer.</p>
+             <p class="price">Rs.150</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mango Mojito', 150)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/virgin-mojito.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Virgin Mojito</h4>
+             <p class="detail-sub">Classic non-alcoholic mojito with mint, lime, and soda, served chilled.</p>
+             <p class="price">Rs.150</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Virgin Mojito', 150)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/oreo-shake.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Oreo Thick Shake</h4>
+             <p class="detail-sub">A heavenly fusion of creamy cheesecake, indulgent Oreo cookies, and a swirl of decadent chocolate, pure bliss in a glass.</p>
+             <p class="price">Rs.185</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Oreo Thick Shake', 185)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/pineapple-juice.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Pineapple Juice</h4>
+             <p class="detail-sub">Freshly squeezed pineapple juice, served chilled for a tropical refreshment.</p>
+             <p class="price">Rs.130</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Pineapple Juice', 130)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/lassi.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>The Orginal Lassi</h4>
+             <p class="detail-sub">A timeless classic, blending creamy yogurt with a hint of sweetness, offering a refreshing and authentic taste of India.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('The Orginal Lassi', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/strawberry.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Strawberry Cashew Smoothie</h4>
+             <p class="detail-sub">Creamy smoothie made with fresh strawberries, cashews, and a hint of sweetness.</p>
+             <p class="price">Rs.160</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Strawberry Cashew Smoothie', 160)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/coffee.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Choco Cafe Cold Coffee</h4>
+             <p class="detail-sub">Chilled coffee drink blended with chocolate, topped with whipped cream.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Choco Cafe Cold Coffee', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+         <img class="detail-img" src="images/drnk-lab/pastry.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Black Forest Pastry</h4>
+             <p class="detail-sub">Rich and moist chocolate pastry layered with cream and cherries, topped with chocolate shavings.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Black Forest Pastry', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/ic-paradise/matka-kulfi.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Matka Kulfi</h4>
+              <p class="detail-sub">Traditional Indian frozen dessert made with thickened milk, flavored with cardamom, and served in an earthen pot for an authentic experience.</p>
+              <p class="price">Rs.89</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Matka Kulfi', 89)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/ic-paradise/choco-sundae.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chocolate Brownie Fudge Sundae</h4>
+             <p class="detail-sub">A rich sundae layered with chocolate brownie chunks, fudge sauce, and creamy ice cream, topped with nuts for a delightful treat.</p>
+             <p class="price">Rs.169</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chocolate Brownie Fudge Sundae', 169)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/mango-sundae.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mango Sundae</h4>
+             <p class="detail-sub">A refreshing sundae made with fresh mango pulp, creamy ice cream, and a drizzle of mango syrup, perfect for mango lovers.</p>
+             <p class="price">Rs.175</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mango Sundae', 175)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/coconut-ic.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Tenders Coconut Ice Cream</h4>
+             <p class="detail-sub">Creamy ice cream infused with the delicate flavor of tender coconut, offering a refreshing and tropical dessert experience.</p>
+             <p class="price">Rs.90</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Tenders Coconut Ice Cream', 90)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/kesar-pista-ic.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Kesar Pista Ice Cream</h4>
+             <p class="detail-sub">A rich and creamy ice cream flavored with saffron and pistachios, delivering a classic Indian dessert experience.</p>
+             <p class="price">Rs.90</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Kesar Pista Ice Cream', 90)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/chocochip-ic.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Choco Chips Ice Cream</h4>
+             <p class="detail-sub">Creamy vanilla ice cream loaded with crunchy chocolate chips, offering a perfect balance of sweetness and texture.</p>
+             <p class="price">Rs.90</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Choco Chips Ice Cream', 90)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/malaikf.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Malai Kulfi Falooda</h4>
+             <p class="detail-sub">A traditional Indian dessert with creamy kulfi, vermicelli, rose syrup, and nuts, served as a refreshing and indulgent treat.</p>
+             <p class="price">Rs.189</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Malai Kulfi Falooda', 189)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/mangofalooda.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mango Seasonal Falooda</h4>
+             <p class="detail-sub">A seasonal delight combining mango pulp, falooda, and creamy kulfi, topped with nuts and served chilled.</p>
+             <p class="price">Rs.229</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mango Seasonal Falooda', 229)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/kitkat-waffle.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>KitKat Waffle</h4>
+             <p class="detail-sub">A crispy waffle topped with KitKat pieces, drizzled with chocolate syrup, and served with a scoop of vanilla ice cream.</p>
+             <p class="price">Rs.169</p>
+             <button class="add-to-cart-btn" onclick="addToCart('KitKat Waffle', 169)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/triplecwaffle.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Triple Chocolate Waffle</h4>
+             <p class="detail-sub">A decadent waffle topped with dark, milk, and white chocolate, served with whipped cream and chocolate shavings.</p>
+             <p class="price">Rs.169</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Triple Chocolate Waffle', 169)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/nutella-waffle.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Nutella Waffle with Vanilla Ice Cream</h4>
+             <p class="detail-sub">A crispy waffle generously spread with Nutella, topped with vanilla ice cream, and drizzled with chocolate syrup.</p>
+             <p class="price">Rs.219</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Nutella Waffle with Vanilla Ice Cream', 219)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/rose-shake.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Rose Gulkand Shake</h4>
+             <p class="detail-sub">A refreshing shake made with rose syrup, gulkand (rose petal preserve), and milk, offering a fragrant and sweet drink.</p>
+             <p class="price">Rs.179</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Rose Gulkand Shake', 179)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/butterscotch-shake.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Butterscotch Shake</h4>
+             <p class="detail-sub">A creamy shake made with butterscotch syrup, milk, and crunchy praline pieces, delivering a sweet and nutty flavor.</p>
+             <p class="price">Rs.149</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Butterscotch Shake', 149)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/mint-oreo.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mint Oreo Thick Shake</h4>
+             <p class="detail-sub">A refreshing thick shake made with Oreo cookies, mint essence, and creamy milk, topped with whipped cream.</p>
+             <p class="price">Rs.189</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mint Oreo Thick Shake', 189)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/bubble-gum-shake.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Bubble Gum Thick Shake</h4>
+             <p class="detail-sub">A fun and colorful thick shake with a bubble gum flavor, topped with whipped cream and sprinkles for a playful treat.</p>
+             <p class="price">Rs.189</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Bubble Gum Thick Shake', 189)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/ic-paradise/watermelon-juice.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Watermelon Juice</h4>
+             <p class="detail-sub">Freshly blended watermelon juice, served chilled, offering a hydrating and refreshing drink perfect for hot days.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Watermelon Juice', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/kfc/hot-chicken-bucket.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Hot & Crispy Chicken Bucket</h4>
+              <p class="detail-sub">A bucket of KFC's signature hot and crispy fried chicken, perfect for sharing.</p>
+              <p class="price">Rs.500</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Hot & Crispy Chicken Bucket', 500)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/kfc/smoky-grilled-cb.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Smoky Grilled Chicken Bucket</h4>
+             <p class="detail-sub">A crispy chicken patty topped with lettuce and mayonnaise, served in a toasted sesame seed bun.</p>
+             <p class="price">Rs.549</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Smoky Grilled Chicken Bucket', 549)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/popcorn-cb.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Popcorn Chicken Bucket</h4>
+             <p class="detail-sub">Bite-sized crispy chicken popcorn, seasoned to perfection.</p>
+             <p class="price">Rs.279</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Popcorn Chicken Bucket', 279)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/zinger-burger.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Zinger Burger</h4>
+             <p class="detail-sub">A crispy chicken fillet topped with lettuce and mayonnaise, served in a toasted sesame seed bun.</p>
+             <p class="price">Rs.199</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Zinger Burger', 199)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/double-down-b.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Double Down Burger</h4>
+             <p class="detail-sub">A unique burger with two crispy chicken fillets as buns, filled with cheese and sauce.</p>
+             <p class="price">Rs.249</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Double Down Burger', 249)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/veg-zinger-b.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Zinger Burger</h4>
+             <p class="detail-sub">A vegetarian burger with a crispy veggie patty, lettuce, and tangy sauce.</p>
+             <p class="price">Rs.150</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Zinger Burger', 150)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/chicken-rice-bowl.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Rice Bowl</h4>
+             <p class="detail-sub">A flavorful rice bowl topped with crispy chicken strips and spicy gravy.</p>
+             <p class="price">Rs.299</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Rice Bowl', 299)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/veg-rice-bowl.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Rice Bowl</h4>
+             <p class="detail-sub">A vegetarian rice bowl with crispy veggie strips and tangy gravy.</p>
+             <p class="price">Rs.189</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Rice Bowl', 189)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/chicken-tw-wrap.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Twister Wrap</h4>
+             <p class="detail-sub">A soft tortilla wrap filled with crispy chicken, lettuce, and creamy sauce.</p>
+             <p class="price">Rs.159</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Twister Wrap', 159)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/veg-tw-wrap.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Twister Wrap</h4>
+             <p class="detail-sub">A vegetarian wrap with crispy veggie strips, lettuce, and tangy sauce.</p>
+             <p class="price">Rs.159</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Twister Wrap', 159)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/french-fries.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>French Fries</h4>
+             <p class="detail-sub">Golden, crispy, and perfectly salted fries, available in small, medium, and large sizes.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('French Fries', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/cheesy-fries.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Cheesy Fries</h4>
+             <p class="detail-sub">Crispy fries topped with melted cheese sauce for a delicious twist.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Cheesy Fries', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+        </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/nuggets.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Nuggets</h4>
+             <p class="detail-sub">Bite-sized crispy chicken nuggets, served with your choice of dipping sauce.</p>
+             <p class="price">Rs.249</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Nuggets', 249)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/kfc/pepsi">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Pepsi (500ml)</h4>
+             <p class="detail-sub">A refreshing carbonated drink to pair with your meal.</p>
+             <p class="price">Rs.60</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Pepsi (500ml)', 60)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+       </div>
+       <div class="detail-card">   
+         <img class="detail-img" src="images/kfc/krusher.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chocolate Crusher</h4>
+             <p class="detail-sub">A creamy chocolate drink blended with crushed ice, perfect for dessert lovers.</p>
+             <p class="price">Rs.149</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chocolate Crusher', 149)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+       </div>
+       <div class="detail-card">
+          <img class="detail-img" src="images/mcdonald's/veg-tikki.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>McAloo Tikki Burger</h4>
+              <p class="detail-sub">A vegetarian burger with a spiced potato patty, fresh lettuce, and tangy sauce, served in a soft bun.</p>
+              <p class="price">Rs.140</p>
+              <button class="add-to-cart-btn" onclick="addToCart('McAloo Tikki Burger', 140)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/mcdonald's/mcchicken.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>McChicken Burger</h4>
+             <p class="detail-sub">A crispy chicken patty topped with lettuce and mayonnaise, served in a toasted sesame seed bun.</p>
+             <p class="price">Rs.160</p>
+             <button class="add-to-cart-btn" onclick="addToCart('McChicken Burger', 160)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/big-mac.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Big Mac</h4>
+             <p class="detail-sub">A double-layered burger with two beef patties, lettuce, cheese, pickles, onions, and special sauce.</p>
+             <p class="price">Rs.220</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Big Mac', 220)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/chick-mcwrap.avif">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken McWrap</h4>
+             <p class="detail-sub">Grilled or crispy chicken wrapped in a soft tortilla with lettuce, tomatoes, and creamy sauce.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken McWrap', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/veggie-mcwrap.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veggie McWrap</h4>
+             <p class="detail-sub">A vegetarian wrap with fresh veggies, tangy sauce, and a crispy veggie patty.</p>
+             <p class="price">Rs.150</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veggie McWrap', 150)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/fries.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>French Fries</h4>
+             <p class="detail-sub">Golden, crispy, and perfectly salted fries, available in small, medium, and large sizes.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('French Fries', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/cheesy-fries.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Cheesy Fries</h4>
+             <p class="detail-sub">Crispy fries topped with melted cheese sauce for a delicious twist.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Cheesy Fries', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/nuggets.jpg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Nuggets</h4>
+             <p class="detail-sub">Bite-sized crispy chicken nuggets, served with your choice of dipping sauce.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Nuggets', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/coke-float.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Coke Float</h4>
+             <p class="detail-sub">A refreshing Coca-Cola topped with creamy vanilla soft serve.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Coke Float', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/iced-coffee.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Iced Coffee</h4>
+             <p class="detail-sub">A chilled coffee drink with a hint of sweetness, perfect for a quick pick-me-up.</p>
+             <p class="price">Rs.150</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Iced Coffee', 150)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/strawberry-shake.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Strawberry Shake</h4>
+             <p class="detail-sub">A creamy milkshake made with fresh strawberries and topped with whipped cream.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Strawberry Shake', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/mcflurry-oreo.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>McFlurry Oreo</h4>
+             <p class="detail-sub">Creamy vanilla soft serve blended with crushed Oreo cookies for a delightful dessert.</p>
+             <p class="price">Rs.190</p>
+             <button class="add-to-cart-btn" onclick="addToCart('McFlurry Oreo', 190)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+        </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/hot-fudge-sundae.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Hot Fudge Sundae</h4>
+             <p class="detail-sub">Vanilla soft serve topped with rich hot fudge and a drizzle of chocolate syrup.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Hot Fudge Sundae', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/ice-tea.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Lemon Ice Tea</h4>
+             <p class="detail-sub">A refreshing blend of aromatic tea infused with the crisp and tangy flavor of lemon, perfect for a rejuvenating drink.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Lemon Ice Tea', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/mcdonald's/korean-burger.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Korean Mc Spicy Premium Chicken Burger</h4>
+             <p class="detail-sub">A premium burger featuring a spicy Korean-style chicken patty with gochujang sauce, fresh lettuce, and creamy sauce, served in a soft sesame seed bun.</p>
+             <p class="price">Rs.315</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Korean Mc Spicy Premium Chicken Burger', 315)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+       </div> 
+       <div class="detail-card">
+          <img class="detail-img" src="images/moonlight/chicken-tikka.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Chicken Tikka</h4>
+              <p class="detail-sub">Juicy chicken pieces marinated in yogurt and spices, grilled to perfection.</p>
+              <p class="price">Rs.350</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Chicken Tikka',350)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/moonlight/paneer-tikka.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Tikka</h4>
+             <p class="detail-sub">Soft paneer cubes marinated in spiced yogurt and grilled with vegetables.</p>
+             <p class="price">Rs.300</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Tikka', 300)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/mutton-seekh-kabab.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mutton Seekh Kabab</h4>
+             <p class="detail-sub">Minced mutton mixed with spices, shaped into skewers, and grilled.</p>
+             <p class="price">Rs.400</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mutton Seekh Kabab', 400)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/butter-chicken.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Butter Chicken</h4>
+             <p class="detail-sub">A creamy and mildly spiced chicken curry cooked in a rich tomato-based gravy.</p>
+             <p class="price">Rs.450</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Butter Chicken', 450)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/paneer-butter.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Butter Masala</h4>
+             <p class="detail-sub">Cottage cheese cooked in a creamy tomato and butter gravy, flavored with spices..</p>
+             <p class="price">Rs.350</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Butter Masala', 350)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/mutton-rogan.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mutton Rogan Josh</h4>
+             <p class="detail-sub">A traditional Kashmiri curry made with tender mutton and aromatic spices.</p>
+             <p class="price">Rs.500</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mutton Rogan Josh', 500)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/dal tadka.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Dal Tadka</h4>
+             <p class="detail-sub">Yellow lentils tempered with ghee, garlic, and spices, served hot.</p>
+             <p class="price">Rs.250</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Dal Tadka', 250)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/veg-kofta-curry.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Kofta Curry</h4>
+             <p class="detail-sub">Soft vegetable dumplings cooked in a rich and creamy curry.</p>
+             <p class="price">Rs.300</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Kofta Curry', 300)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/chicken-biryani.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Biryani</h4>
+             <p class="detail-sub">Aromatic basmati rice cooked with tender chicken and a blend of spices.</p>
+             <p class="price">Rs.400</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Biryani', 400)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/mutton-biryani.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mutton Biryani</h4>
+             <p class="detail-sub">Fragrant rice layered with spiced mutton and cooked to perfection.</p>
+             <p class="price">Rs.500</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mutton Biryani', 500)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/jeera-rice.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Jeera Rice</h4>
+             <p class="detail-sub">Steamed basmati rice flavored with cumin seeds and ghee.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Jeera Rice', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/butter-naan.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Butter Naan</h4>
+             <p class="detail-sub">Soft Indian bread brushed with butter, perfect for curries.</p>
+             <p class="price">Rs.50</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Butter Naan', 50)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/garlic-naan.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Garlic Naan</h4>
+             <p class="detail-sub">Naan topped with minced garlic and butter, served hot.</p>
+             <p class="price">Rs.70</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Garlic Naan', 70)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/gulab-jamun.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Gulab Jamun</h4>
+             <p class="detail-sub">Soft and spongy milk-based dumplings soaked in sugar syrup.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Gulab Jamun', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/moonlight/phirni.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Phirni</h4>
+             <p class="detail-sub">A creamy rice pudding flavored with cardamom and garnished with nuts.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Phirni', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+          <img class="detail-img" src="images/niyaz/corn-soup.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Veg Sweet Corn Soup</h4>
+              <p class="detail-sub">A comforting soup made with sweet corn, fresh vegetables, and mild spices, offering a warm and flavorful start to your meal</p>
+              <p class="price">Rs.140</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Veg Sweet Corn Soup', 140)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/niyaz/chicken-sop.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Manchow Soup</h4>
+             <p class="detail-sub">A spicy and tangy soup with shredded chicken, vegetables, and crispy fried noodles, perfect for warming up your taste buds.</p>
+             <p class="price">Rs.160</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Manchow Soup', 160)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/murgtikka.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Murg Tikka Kabab</h4>
+             <p class="detail-sub">Tender chicken pieces marinated in aromatic spices and grilled to perfection, delivering a smoky and flavorful kabab experience.</p>
+             <p class="price">Rs.305</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Murg Tikka Kabab', 305)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/chicken-kabab.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Fried Kabab</h4>
+             <p class="detail-sub">Crispy fried chicken kababs seasoned with a blend of spices, offering a crunchy and juicy delight for kabab lovers.</p>
+             <p class="price">Rs.285</p>
+             <button class="add-to-cart-btn" onclick="addToCart('TChicken Fried Kabab', 285)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/veg-chilli.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Chilli</h4>
+             <p class="detail-sub">A spicy Indo-Chinese dish with stir-fried vegetables tossed in a tangy and flavorful chili sauce, perfect for spice enthusiasts.</p>
+             <p class="price">Rs.225</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Chilli', 225)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/paneer-schezwan.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Schezwan</h4>
+             <p class="detail-sub">Soft paneer cubes cooked in a spicy Schezwan sauce, delivering a bold and flavorful Indo-Chinese experience.</p>
+             <p class="price">Rs.240</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Schezwan', 240)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/chick-hot-garlic.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Hot Garlic</h4>
+             <p class="detail-sub">Juicy chicken pieces cooked in a rich garlic sauce with a hint of spice, offering a savory and aromatic dish.</p>
+             <p class="price">Rs.305</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Hot Garlic', 305)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/chick-lollipop.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Lollipop</h4>
+             <p class="detail-sub">Crispy and juicy chicken drumsticks marinated in spices, fried to perfection, and served with a tangy dipping sauce.</p>
+             <p class="price">Rs.330</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Lollipop', 330)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/mutton-manch.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mutton Manchurian</h4>
+             <p class="detail-sub">Tender mutton pieces tossed in a spicy and tangy Manchurian sauce, offering a fusion of Indian and Chinese flavors.</p>
+             <p class="price">Rs.430</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mutton Manchurian', 430)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/veg-kadai.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Kadai</h4>
+             <p class="detail-sub">A flavorful vegetarian dish with mixed vegetables cooked in a rich and aromatic kadai masala, perfect with naan or rice.</p>
+             <p class="price">Rs.255</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Kadai', 255)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/paneer-makhanwala.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Makhanwala</h4>
+             <p class="detail-sub">Soft paneer cubes cooked in a creamy tomato-based gravy, flavored with butter and spices, delivering a rich and indulgent dish.</p>
+             <p class="price">Rs.300</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Makhanwala', 300)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/murg-akbari.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Murg Akbari</h4>
+             <p class="detail-sub">A royal chicken dish cooked in a creamy and mildly spiced gravy, offering a luxurious and flavorful dining experience.</p>
+             <p class="price">Rs.425</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Murg Akbari', 425)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/mutton-hyderabadi.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Mutton Hyderabadi</h4>
+             <p class="detail-sub">A traditional Hyderabadi mutton curry cooked with aromatic spices and herbs, delivering a rich and authentic flavor.</p>
+             <p class="price">Rs.530</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Mutton Hyderabadi', 530)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+        </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/butter-kulcha.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Butter Kulcha</h4>
+             <p class="detail-sub">Soft and fluffy Indian bread brushed with butter, perfect for pairing with rich gravies and curries.</p>
+             <p class="price">Rs.65</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Butter Kulcha', 65)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/butter-naan.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Butter Naan</h4>
+             <p class="detail-sub">A classic Indian flatbread brushed with butter, soft and fluffy, ideal for scooping up flavorful curries.</p>
+             <p class="price">Rs.70</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Butter Naan', 70)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/ghee-rice.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Ghee Rice</h4>
+             <p class="detail-sub">Aromatic basmati rice cooked with ghee and whole spices, offering a fragrant and flavorful accompaniment to curries.</p>
+             <p class="price">Rs.210</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Ghee Rice', 210)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+       </div>  
+        <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/veg-biryani.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Biryani</h4>
+             <p class="detail-sub">A fragrant rice dish cooked with fresh vegetables, aromatic spices, and herbs, delivering a flavorful and satisfying vegetarian meal.</p>
+             <p class="price">Rs.305</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Biryani', 305)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div> 
+        </div>  
+        <div class="detail-card">
+         <img class="detail-img" src="images/niyaz/chicken-biryani.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Biryani</h4>
+             <p class="detail-sub">A classic biryani made with tender chicken, basmati rice, and a blend of aromatic spices, offering a rich and flavorful experience.</p>
+             <p class="price">Rs.270</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Biryani', 270)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>            
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/only-fish/fish-tikka.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Fish Tikka</h4>
+              <p class="detail-sub">Tender fish cubes marinated in spices and grilled to perfection.</p>
+              <p class="price">Rs.350</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Fish Tikka',350)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/only-fish/prawns-koliwada.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Prawns Koliwada</h4>
+             <p class="detail-sub">Crispy fried prawns coated in a spicy batter, a coastal delicacy.</p>
+             <p class="price">Rs.400</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Prawns Koliwada', 400)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/crab-lollipop.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Crab Lollipop</h4>
+             <p class="detail-sub">Juicy crab meat shaped into lollipops, fried until golden brown.</p>
+             <p class="price">Rs.450</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Crab Lollipop', 450)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/fish-curry.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Fish Curry</h4>
+             <p class="detail-sub">A traditional fish curry cooked with coconut milk and aromatic spices.</p>
+             <p class="price">Rs.500</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Fish Curry', 500)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/prawns-masala.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Prawns Masala</h4>
+             <p class="detail-sub">Juicy prawns cooked in a rich and spicy masala gravy.</p>
+             <p class="price">Rs.550</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Prawns Masala', 550)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/pomfret-fry.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Pomfret Fry</h4>
+             <p class="detail-sub">Whole pomfret marinated in spices and shallow-fried to perfection.</p>
+             <p class="price">Rs.600</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Pomfret Fry', 600)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/surmai-curry.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Surmai Curry</h4>
+             <p class="detail-sub">Kingfish cooked in a tangy and flavorful curry, served with steamed rice.</p>
+             <p class="price">Rs.650</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Surmai Curry', 650)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/bangda-fry.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Bangda Fry</h4>
+             <p class="detail-sub">Mackerel fish marinated in spices and fried until crispy.</p>
+             <p class="price">Rs.400</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Bangda Fry', 400)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/fish-biryani.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Fish Biryani</h4>
+             <p class="detail-sub">Aromatic basmati rice layered with spiced fish and cooked to perfection.</p>
+             <p class="price">Rs.550</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Fish Biryani', 550)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/prawns-biryani.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Prawns Biryani</h4>
+             <p class="detail-sub">Fragrant rice cooked with juicy prawns and a blend of spices.</p>
+             <p class="price">Rs.600</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Prawns Biryani', 600)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/rice-with-fish.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Steamed Rice with Fish Curry</h4>
+             <p class="detail-sub">A classic combination of steamed rice served with flavorful fish curry.</p>
+             <p class="price">Rs.450</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Steamed Rice with Fish Curry', 450)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/fish-fingers.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Fish Fingers</h4>
+             <p class="detail-sub">Naan topped with minced garlic and butter, served hot.</p>
+             <p class="price">Rs.300</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Fish Fingers', 300)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/calamari-rings.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Calamari Rings</h4>
+             <p class="detail-sub">Golden-fried squid rings served with a tangy dipping sauce.</p>
+             <p class="price">Rs.350</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Calamari Rings', 350)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/coconut-pudding.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Tender Coconut Pudding</h4>
+             <p class="detail-sub">A creamy dessert made with tender coconut and a hint of sweetness.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Tender Coconut Pudding', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/only-fish/caramel-pudding.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Caramel Pudding</h4>
+             <p class="detail-sub">A smooth and creamy pudding topped with caramel sauce.</p>
+             <p class="price">Rs.150</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Caramel Pudding', 150)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+          <img class="detail-img" src="images/pizzahut/margh-pizza.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Margherita Pizza</h4>
+              <p class="detail-sub">A classic pizza topped with fresh mozzarella cheese and tomato sauce.</p>
+              <p class="price">Rs.249</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Margherita Pizza', 249)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/pizzahut/farmhouse-pizza.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Farmhouse Pizza</h4>
+             <p class="detail-sub">A vegetarian pizza loaded with fresh vegetables like capsicum, onions, tomatoes, and mushrooms.</p>
+             <p class="price">Rs.399</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Farmhouse Pizza', 399)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/supreme-pizza.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Supreme Pizza</h4>
+             <p class="detail-sub">A pizza topped with grilled chicken, chicken sausage, and spicy chicken chunks.</p>
+             <p class="price">Rs.499</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Supreme Pizza', 499)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/veggie-supreme.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veggie Supreme Pizza</h4>
+             <p class="detail-sub">A pizza loaded with a variety of fresh vegetables and mozzarella cheese.</p>
+             <p class="price">Rs.499</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veggie Supreme Pizza', 499)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/pepperoni-pizza.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Pepperoni Pizza</h4>
+             <p class="detail-sub">A classic pizza topped with spicy pepperoni slices and mozzarella cheese.</p>
+             <p class="price">Rs.499</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Pepperoni Pizza', 499)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/paneer-tikka.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Tikka Pizza</h4>
+             <p class="detail-sub">A fusion pizza topped with marinated paneer cubes, onions, and capsicum.</p>
+             <p class="price">Rs.399</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Tikka Pizza', 399)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/bbq-chicken-pizza.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>BBQ Chicken Pizza</h4>
+             <p class="detail-sub">A smoky pizza topped with BBQ chicken, onions, and mozzarella cheese.</p>
+             <p class="price">Rs.499</p>
+             <button class="add-to-cart-btn" onclick="addToCart('BBQ Chicken Pizza', 499)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/garlic-sticks.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Garlic Breadsticks</h4>
+             <p class="detail-sub">Freshly baked breadsticks brushed with garlic butter and served with a cheesy dip.</p>
+             <p class="price">Rs.149</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Garlic Breadsticks', 149)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/garlic-bread.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Cheesy Garlic Bread</h4>
+             <p class="detail-sub">Garlic bread topped with melted mozzarella cheese.</p>
+             <p class="price">Rs.179</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Cheesy Garlic Bread', 179)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/chicken-wings.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Wings</h4>
+             <p class="detail-sub">Spicy and crispy chicken wings served with a tangy dipping sauce.</p>
+             <p class="price">Rs.249</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Wings', 249)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/veg-alfredo-pasta.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Alfredo Pasta</h4>
+             <p class="detail-sub">Creamy Alfredo pasta with fresh vegetables and a rich white sauce.</p>
+             <p class="price">Rs.249</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Alfredo Pasta', 249)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/ch-arab-pasta.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Arrabbiata Pasta</h4>
+             <p class="detail-sub">Spicy red sauce pasta with grilled chicken and herbs.</p>
+             <p class="price">Rs.299</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Arrabbiata Pasta', 299)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/choco-lava-cake.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Choco Lava Cake</h4>
+             <p class="detail-sub">A warm chocolate cake with a gooey molten chocolate center.</p>
+             <p class="price">Rs.129</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Choco Lava Cake', 129)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/brownie-sundae.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Brownie Sundae</h4>
+             <p class="detail-sub">A rich brownie topped with vanilla ice cream and chocolate sauce.</p>
+             <p class="price">Rs.199</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Brownie Sundae', 199)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/pizzahut/pepsi">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Pepsi (500ml)</h4>
+             <p class="detail-sub">A refreshing carbonated drink to pair with your meal.</p>
+             <p class="price">Rs.60</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Pepsi (500ml)', 60)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+          <img class="detail-img" src="images/puzzles/veg-grill-sand.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Grilled Veg Sandwich</h4>
+              <p class="detail-sub">A classic grilled sandwich filled with fresh vegetables, cheese, and tangy sauces.</p>
+              <p class="price">Rs.150</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Grilled Veg Sandwich',150)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/puzzles/chicken-club-sand.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chicken Club Sandwich</h4>
+             <p class="detail-sub">A triple-layered sandwich with grilled chicken, lettuce, tomatoes, and mayonnaise.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chicken Club Sandwich', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/paneer-tikka-sand.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Tikka Sandwich</h4>
+             <p class="detail-sub">A sandwich stuffed with marinated paneer tikka, onions, and capsicum, grilled to perfection.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Tikka Sandwich', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/veg-burger.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Classic Veg Burger</h4>
+             <p class="detail-sub">A crispy veggie patty topped with lettuce, tomatoes, and mayonnaise, served in a soft bun.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Classic Veg Burger', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/cheesy-chick-burg.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Cheesy Chicken Burger</h4>
+             <p class="detail-sub">A juicy chicken patty topped with melted cheese, lettuce, and creamy sauce.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Cheesy Chicken Burger', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/french-fries.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>French Fries</h4>
+             <p class="detail-sub">Golden, crispy, and perfectly salted fries, available in small, medium, and large sizes.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('French Fries', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/cheesy-nachos.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Cheesy Nachos</h4>
+             <p class="detail-sub">Crispy nachos topped with melted cheese, jalapeños, and salsa.</p>
+             <p class="price">Rs.170</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Cheesy Nachos', 170)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/alfredo-pasta.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Creamy Alfredo Pasta</h4>
+             <p class="detail-sub">A rich and creamy white sauce pasta with fresh vegetables and herbs.</p>
+             <p class="price">Rs.220</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Creamy Alfredo Pasta', 220)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/potato-wedges.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Loaded Potato Wedges</h4>
+             <p class="detail-sub">Garlic bread topped with melted mozzarella cheese.</p>
+             <p class="price">Rs.160</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Loaded Potato Wedges', 160)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/arab-pasta.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Spicy Arrabbiata Pasta</h4>
+             <p class="detail-sub">A tangy red sauce pasta with a hint of spice, served with garlic bread.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Spicy Arrabbiata Pasta', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/cold-coffee.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Cold Coffee</h4>
+             <p class="detail-sub">A refreshing coffee drink blended with milk and ice, topped with whipped cream.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Cold Coffee', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/iced-lemon-tea.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Iced Lemon Tea</h4>
+             <p class="detail-sub">A chilled tea infused with lemon flavor, perfect for a refreshing break.</p>
+             <p class="price">Rs.100</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Iced Lemon Tea', 100)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/strawberry-milkshake.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Strawberry Milkshake</h4>
+             <p class="detail-sub">A creamy milkshake made with fresh strawberries and topped with whipped cream.</p>
+             <p class="price">Rs.149</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Strawberry Milkshake', 149)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/choco-brownie.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Chocolate Brownie</h4>  
+             <p class="detail-sub">A rich and fudgy chocolate brownie served warm.</p>
+             <p class="price">Rs.120</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Chocolate Brownie', 120)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/puzzles/blueberry-cheesecake.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Blueberry Cheesecake</h4>
+             <p class="detail-sub">A creamy cheesecake topped with a layer of blueberry compote.</p>
+             <p class="price">Rs.250</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Blueberry Cheesecake', 250)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+          <img class="detail-img" src="images/the-sigdi/sigdi-babycorn.jpeg">
+          <div class="detail-desc">
+            <div class="detail-name">
+              <h4>Baby Corn Manchurian</h4>
+              <p class="detail-sub">A spicy and flavorful dish made with crispy fried baby corn tossed in a tangy and savory Manchurian sauce.</p>
+              <p class="price">Rs.240</p>
+              <button class="add-to-cart-btn" onclick="addToCart('Baby Corn Manchurian', 240)">Add to Cart</button>
+            </div>
+            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+          </div>  
+        </div>
+        <div class="detail-card">
+          <img class="detail-img" src="images/the-sigdi/sigdi-boondi-raita.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Boondi Raita</h4>
+             <p class="detail-sub">A refreshing yogurt-based side dish with crispy boondi (fried gram flour balls) and a hint of spices.</p>
+             <p class="price">Rs.50</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Boondi Raita', 50)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-dal-fry.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Dal Fry</h4>
+             <p class="detail-sub">A comforting and flavorful lentil dish cooked with aromatic spices and tempered with ghee.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Dal Fry', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-dal-khichdi.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Dal Khichdi</h4>
+             <p class="detail-sub">A wholesome and nutritious dish made with rice, lentils, and mild spices, perfect for a light meal.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Dal Khichdi', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-gobi-manch.jpeg">
+         <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Gobi Manchurian</h4>
+             <p class="detail-sub">Crispy cauliflower florets coated in a spicy and tangy Manchurian sauce, a popular Indo-Chinese dish.</p>
+             <p class="price">Rs.199</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Gobi Manchurian', 199)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-gulab-jamun.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Gulab Jamun</h4>
+             <p class="detail-sub">Soft, spongy and delicious Indian dessert served with a generous helping of sugar syrup.</p>
+             <p class="price">Rs.60</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Gulab Jamun', 60)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-hakka-noodles.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Hakka Noodles</h4>
+             <p class="detail-sub">Stir-fried noodles tossed with fresh vegetables and flavorful sauces, a classic Indo-Chinese favorite.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Hakka Noodles', 200)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-hara-kabab.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Hara Bhara Kabab</h4>
+             <p class="detail-sub">A healthy and delicious kabab made with spinach, green peas, and spices, shallow-fried to perfection.</p>
+             <p class="price">Rs.220</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Hara Bhara Kabab', 220)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-jeera-rice.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Jeera Rice</h4>
+             <p class="detail-sub">Aromatic basmati rice cooked with cumin seeds and whole spices, a perfect accompaniment to curries.</p>
+             <p class="price">Rs.180</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Jeera Rice', 180)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-paneer-tikka.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Paneer Tikka</h4>
+             <p class="detail-sub">Soft paneer cubes marinated in a spiced yogurt mix seasoned masala and cooked in a tandoor.</p>
+             <p class="price">Rs.220</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Paneer Tikka', 220)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-biryani.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Biryani</h4>
+             <p class="detail-sub">A fragrant and flavorful basmati rice dish cooked with fresh vegetables, aromatic spices, and herbs.</p>
+             <p class="price">Rs.240</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Biryani', 240)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>
+       <div class="detail-card">
+         <img class="detail-img" src="images/the-sigdi/sigdi-fried-rice.jpeg">
+          <div class="detail-desc">
+           <div class="detail-name">
+             <h4>Veg Fried Rice</h4>
+             <p class="detail-sub">A classic Indo-Chinese dish made with fresh veggies tossed in a pan with steamed rice and served.</p>
+             <p class="price">Rs.200</p>
+             <button class="add-to-cart-btn" onclick="addToCart('Veg Fried Rice', 220)">Add to Cart</button>
+           </div>
+           <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+         </div>            
+       </div>     
+      </div>
+    </div>
+  </div>
+  <!-- Logout Confirmation Modal -->
+  <div id="logout-modal" class="modal">
+    <div class="modal-content">
+      <h3>Are you sure you want to logout?</h3>
+      <div class="modal-actions">
+        <button id="logout-cancel" class="modal-btn">Cancel</button>
+        <button id="logout-yes" class="modal-btn">Logout</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    //document.getElementById('logout-yes').addEventListener('click', function() {
+    // Redirect to the login page or perform logout action
+      //window.location.href = 'login.html';
+    //});
+    document.getElementById('logout-cancel').addEventListener('click', function() {
+    // Close the modal
+      document.getElementById('logout-modal').style.display = 'none';
+    });
+    document.querySelector('.sidebar-logout a').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent default link behavior
+      document.getElementById('logout-modal').style.display = 'flex'; // Show the modal
+    });
+  </script>
+  <script src="script1.js"></script>
+  <script src="logout1.js"></script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</html> 
