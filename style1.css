@@ -1,0 +1,1463 @@
+:root {
+    --primary-color: #0e6253;
+    --secondary-color: #ffc107;
+    --white-color:#fff;
+    --black-color: #222;
+    --grey-color: #f5f5f5;
+    --softGreen-color: #d9f2ee;
+    --darkGrey-color: #a7a7a7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: var(--softGreen-color);
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.sidebar {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 2%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    color: var(--white-color);
+    min-width: 200px; /* Set a minimum width */
+    max-width: 300px; /* Set a maximum width */
+    animation: slideIn 0.8s ease-in-out;
+}
+
+
+
+
+.sidebar-menus {
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.sidebar-menus a, .sidebar-logout a {
+    text-decoration: none;
+    color: var(--white-color);
+    padding: 5% 8%;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    
+}
+
+.sidebar-menus a ion-icon, .sidebar-logout a ion-icon {
+    font-size: 20px;
+}
+
+.sidebar-menus a:hover, .sidebar-logout a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+}
+
+.main {
+     width: 80%;
+     height: max-content;
+     min-height: 100vh;
+     padding: 2%;
+     background-color: var(--softGreen-color);
+     margin-left: 20%;
+}
+
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 98, 83, 0.8); /* Semi-transparent background matching the primary color */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+  
+.modal-content {
+    background-color: var(--white-color); /* White background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    color: var(--primary-color); /* Text color matching the primary theme */
+    animation: slideDown 0.4s ease-in-out;
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+  
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color); /* Button text color */
+}
+  
+.modal-btn:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+  
+#logout-yes {
+    background-color: var(--secondary-color); /* Secondary color for the "Yes" button */
+}
+  
+#logout-cancel {
+    background-color: var(--primary-color); /* Primary color for the "Cancel" button */
+}
+
+
+.search {
+    width: 60%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--white-color);
+    border-radius: 20px;
+}
+
+.search input {
+    width: 80%;
+    height: 100%;
+    border: none;
+    padding: 20px;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.search input:focus {
+    width: 90%; /* Expand width on focus */
+}
+
+.search-btn {
+    width: 150px;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--white-color);
+}
+
+.search:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart, .user {
+    font-size: 20px;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
+    text-decoration: none;
+    padding: 10px;
+    height: 40px;
+    border-radius: 50%
+}
+
+.cart:hover, .user:hover {
+    color: blue;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.cart-count {
+    font-size: 13px;
+}
+
+.main-highlight {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 2%;
+    margin: 3% 0;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.main-title {
+    font-size: 26px;
+}
+ 
+.highlight-wrapper {
+    width: 100%;
+    display: flex;
+    padding: 1%;
+    border-radius: 8px;
+    gap: 1.5 rem;
+    overflow-x: hidden;
+}
+
+.highlight-card {
+    display: flex;
+    flex-direction: row;
+    min-width: 200px;
+    width: 80%;
+    height: 100%;
+    min-height: auto;
+    gap: 1rem;
+    border-radius: 8px;
+    padding: 1%;
+    background-color: var(--grey-color);
+    cursor: pointer;
+    margin: 5px;
+    overflow: hidden;
+}
+
+/* Add animation for the recommendation cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.highlight-card {
+    animation: fadeInUp 0.6s ease-in-out;
+    opacity: 0; /* Start hidden */
+    animation-fill-mode: forwards; /* Ensure the final state is retained */
+}
+
+.highlight-card:nth-child(1) {
+    animation-delay: 0.2s; /* Delay for the first card */
+}
+
+.highlight-card:nth-child(2) {
+    animation-delay: 0.4s; /* Delay for the second card */
+}
+
+.highlight-card:nth-child(3) {
+    animation-delay: 0.6s; /* Delay for the third card */
+}
+
+.highlight-card:nth-child(4) {
+    animation-delay: 0.8s; /* Delay for the fourth card */
+}
+
+.highlight-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.highlight-desc h4 {
+    color: var(--primary-color);
+}
+
+.highlight-desc p {
+    color: var(--black-color);
+    font-size: 13px;
+}
+
+.highlight-card:hover {
+    background-color: var(--white-color);
+    box-shadow: rgba(176, 176, 176, 0.2) 0px 2px 8px 0px;
+}
+
+.main-menus {
+    min-height: 1000%;
+    background-color: var(--grey-color);
+    padding: 2%;
+    border-radius: 8px;
+}
+
+.main-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+
+.highlight-wrapper, .filter-wrapper {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    white-space: nowrap; /* Prevent wrapping of child elements */
+}
+
+.menu-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit text color */
+    display: block; /* Ensure the link wraps the entire card */
+}
+
+.filter-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    width: 100%;
+    height: 100px;
+    gap: 1.2rem;
+}
+
+.filter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 80px;
+    height: 100%;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    border-radius: 8px;
+    border: 1px solid var(--softGreen-color);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Animation for menu category cards */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-card {
+    animation: slideInUp 0.6s ease-in-out;
+    opacity: 0; /* Start hidden */
+    animation-fill-mode: forwards; /* Retain the final state */
+}
+
+.filter-card:nth-child(1) {
+    animation-delay: 0.2s; /* Delay for the first card */
+}
+
+.filter-card:nth-child(2) {
+    animation-delay: 0.4s; /* Delay for the second card */
+}
+
+.filter-card:nth-child(3) {
+    animation-delay: 0.6s; /* Delay for the third card */
+}
+
+.filter-card:nth-child(4) {
+    animation-delay: 0.8s; /* Delay for the fourth card */
+}
+
+.filter-card:nth-child(5) {
+    animation-delay: 1s; /* Delay for the fifth card */
+}
+
+.filter-card:nth-child(6) {
+    animation-delay: 1.2s; /* Delay for the sixth card */
+}
+
+.filter-card:nth-child(7) {
+    animation-delay: 1.4s; /* Delay for the seventh card */
+}
+
+.filter-card:nth-child(8) {
+    animation-delay: 1.6s; /* Delay for the eighth card */
+}
+
+/* Hover effect for filter cards */
+.filter-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-card:hover {
+    transform: scale(1.1); /* Slightly enlarge the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+/* Add a subtle glow effect to the icons */
+.filter-icon {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.filter-card:hover .filter-icon {
+    background-color: var(--secondary-color); /* Highlight the icon */
+    transform: rotate(10deg); /* Add a slight rotation */
+}
+
+.filter-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+    font-size: 30px;
+    background-color: var(--softGreen-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+}
+
+.filter-card:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.filter-card:hover .filter-icon {
+    background-color: var(--white-color);
+}
+
+.divider {
+    margin: 1rem 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.restaurant-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit text color */
+    display: block; /* Ensure the link wraps the entire card */
+}
+
+.restaurant-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+  
+.restaurant-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    max-width: 100%; /* Ensure the wrapper does not shrink */
+    margin: 0 auto; /* Center the wrapper if needed */
+    overflow: visible;
+    min-height: auto;
+}
+  
+.restaurant-card {
+    width: 100%;
+    height: 250px;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Align content vertically */
+    gap: 15px; /* Add spacing between image and text */
+    padding: 10px 10px 10px 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #d9f2ee; /* Soft green */
+}
+  
+.restaurant-card img {
+    width: 350px; /* Set a fixed width */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0; /* Add margin to the image */
+}
+  
+.restaurant-info {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    justify-content: flex-start; /* Align text to the top */
+    gap: 5px; /* Add space between text elements */
+}
+
+.restaurant-info h4 {
+    margin: 0;
+    font-size: 25px;
+    color: var(--black-color); /* Dark green */
+}
+
+.restaurant-info h4:hover {
+    color: var(--primary-color); /* Change color on hover */
+}
+
+.restaurant-info .rating,
+.restaurant-info .cuisine,
+.restaurant-info .price-range,
+.restaurant-info .reviews {
+    margin: 0;
+    font-size: 16px;
+    text-align: left; /* Align text to the left */
+    color: #555; /* Neutral gray for secondary text */
+}
+
+.restaurant-info .rating {
+    color: #ffc107; /* Orange for ratings */
+    font-weight: bold;
+    display: inline;
+}
+
+.restaurant-info .cuisine {
+    color: #28a745; /* Green for cuisine type */
+}
+
+.restaurant-info .price-range {
+    color: #007bff; /* Blue for price range */
+}
+.restaurant-info .reviews {
+    color: #6c757d; /* Gray for reviews */
+}
+
+.reviews {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555; /* Neutral gray for reviews */
+    line-height: 1.0; /* Improve readability */
+}
+
+.reviews p {
+    margin: 5px 0; /* Add spacing between reviews */
+    font-style: italic; /* Make reviews italic for emphasis */
+    color: #6c757d; /* Slightly lighter gray for reviews */
+}
+  
+.restaurant-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-detail {
+    margin: 1rem 0 1.5rem 0;
+}
+
+.detail-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
+    border-radius: 8px;
+}
+
+.detail-card {
+    height: 100%;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    margin: 0.5% 0;
+    box-shadow: rgba(176, 176, 176, 0.2) 0 px 2px 8px 0px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#choose-order-section {
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.detail-img {
+    width: 100%;
+    height: 200px; 
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    filter:brightness(0.8);
+}
+
+.detail-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3%;
+    width: 100%;
+}
+
+.detail-sub {
+    font-size: 12px;
+    color: var(--darkGrey-color);
+    letter-spacing: 0.5;
+    margin: 1% 0;
+}
+
+.price {
+    color: var(--primary-color);
+    margin-top: 2px;
+}
+
+.detail-favourites {
+    font-size: 24px; /* Set a fixed size */
+    width: 24px;
+    height: 24px; 
+    cursor: pointer; /* Optional: Add a pointer cursor for interactivity */
+}
+
+.detail.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+.detail-card:hover .detail-img {
+    filter: opacity(1);
+}
+
+.detail-card:hover .detail-name h4 {
+    color: var(--primary-color)
+}
+
+.detail-card:hover .price {
+    letter-spacing: 1.5px;
+}
+
+/* Shopping Cart Table */
+#shoppingCartTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+    overflow-x: auto;
+}
+
+#shoppingCartTable th, #shoppingCartTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#shoppingCartTable th {
+    background-color: var(--primary-color);
+    font-weight: bold;
+    color: var(--white-color);
+    padding: 5px;
+}
+
+#shoppingCartTable td {
+    min-width: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Align item name to the left */
+#shoppingCartTable td:first-child {
+    text-align: left;
+}
+
+/* Align price and total price to the right */
+#shoppingCartTable td:nth-child(3),
+#shoppingCartTable td:nth-child(4) {
+    text-align: right;
+}
+
+
+#shoppingCartTable tbody tr:nth-child(odd) {
+    background-color: #fff7e6;
+}
+
+#shoppingCartTable tbody tr:nth-child(even) {
+    background-color: var(--white-color)
+}
+
+/* Table Row Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#shoppingCartTable tbody tr {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.decrease-btn, button.increase-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+button.remove-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+/* Order Now Button */
+.order-now {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.order-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+}
+
+.order-btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.order-btn:active {
+    transform: scale(0.95);
+}
+
+
+
+.add-to-cart-btn {
+    width: 100%;
+    margin: 10px 0 10px 5px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 8px;
+    padding: 1%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    transform: scale(1.1); /* Slightly enlarge the button */
+    background-color: var(--secondary-color);
+    color: var(--black-color);
+}
+
+@media screen and (max-width:640px) {
+    .sidebar {
+        display: none;
+        width: 50%;
+    }
+    .main {
+        margin-left: 0; 
+    }
+    .menu-toggle {
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        background-color: var(--white-color);
+        color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 3;
+    }
+    .sidebar.active {
+        display: flex;
+        z-index: 10;
+    }
+    .highlight-card {
+        white-space: normal; /* Ensures text wraps */
+        word-wrap: break-word; /* Breaks long words */
+        overflow-wrap: break-word;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+      width: 50%;
+      position: absolute;
+    }
+  
+    .main {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .restaurant-card {
+      width: 100%;
+      margin-bottom: 10px;
+      flex-direction: row; 
+      align-items: flex-start; 
+      gap: 10px; 
+    } 
+
+    .restaurant-card img {
+        width: 20%; 
+        height: auto; 
+    } 
+    .highlight-card {
+        white-space: normal; /* Ensures text wraps */
+        word-wrap: break-word; /* Breaks long words */
+        overflow-wrap: break-word;
+    }   
+    #shoppingCartTable {
+        display: block; /* Make the table scrollable */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent wrapping of table content */
+    }
+
+    #shoppingCartTable th, #shoppingCartTable td {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+        padding: 8px; /* Adjust padding */
+    }  
+}
+
+/* For screens smaller than 480px */
+@media screen and (max-width: 480px) {
+    .main-title {
+      font-size: 1.2rem; /* Adjust font size */
+    }
+
+    .sidebar {
+      width: 50%;
+      position: absolute;
+    }
+  
+    .detail-card {
+      flex-direction: column; /* Stack content vertically */
+    }
+
+    .restaurant-card {
+        padding: 10px;
+        flex-direction: row;
+    }
+
+    .restaurant-card img {
+        width: 20%; 
+        height: auto; 
+    }
+
+    .restaurant-info h4 {
+        font-size: 18px; 
+    }
+
+    .restaurant-info .rating,
+    .restaurant-info .cuisine,
+    .restaurant-info .price-range,
+    .restaurant-info .reviews {
+        font-size: 12px; 
+    } 
+    .highlight-card {
+        white-space: normal; /* Ensures text wraps */
+        word-wrap: break-word; /* Breaks long words */
+        overflow-wrap: break-word;
+    }
+    #shoppingCartTable {
+        font-size: 0.8rem; /* Further reduce font size */
+    }
+
+    #shoppingCartTable th, #shoppingCartTable td {
+        padding: 5px; /* Further adjust padding */
+    }
+
+    #shoppingCartTable td:first-child {
+        text-align: center; /* Center align item name for very small screens */
+    }
+    .cart-summary {
+        font-size: 1rem; /* Adjust font size */
+        flex-direction: row; /* Stack summary items vertically */
+    }
+}  
+
+
+/* Order Confirmation Page Styles */
+.order-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.order-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.order-details {
+  margin-top: 30px;
+}
+
+.order-details h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.order-summary ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.order-total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.payment-section {
+  margin-top: 30px;
+}
+
+.payment-section h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.payment-options label {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.payment-options input {
+  margin-right: 10px;
+}
+
+.confirm-btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+
+.confirm-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+#confirmation-message {
+  margin-top: 30px;
+  display: none;
+}
+
+#confirmation-message h2 {
+  font-size: 2rem;
+  color: var(--success-color);
+  margin-bottom: 10px;
+}
+
+#confirmation-message p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+
+/* Order Confirmation Form */
+
+
+.order-confirmation {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.order-confirmation h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+.confirm-btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+
+.confirm-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Order Status Section */
+.order-status {
+  margin-top: 30px;
+  text-align: left;
+  color: var(--primary-color);
+}
+
+.status-tracker {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.status-step {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.status-step i {
+  font-size: 2rem;
+  color: #ccc;
+}
+
+.status-step.completed i {
+  color: var(--primary-color);
+}
+
+.status-step p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.status-step::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  width: 100%;
+  height: 4px;
+  background-color: #ccc;
+  z-index: -1;
+}
+
+.status-step.completed::after {
+  background-color: var(--primary-color);
+}
+
+.status-step:last-child::after {
+  display: none;
+}
+
+/* Feedback Section */
+.feedback-section {
+  margin-top: 30px;
+  text-align: left;
+  color: var(--primary-color);
+}
+
+.feedback-section textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  font-size: 1rem;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 2rem;
+    color: grey;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.rating input:checked ~ label {
+    color: gold;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold;
+}
+
+.feedback-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left !important;
+}
+
+.feedback-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+
+/* Adjust styles for smaller screens */
+@media (max-width: 767px) {
+    .order-header h1 {
+        font-size: 2rem;
+    }
+
+    .order-details h2,
+    .payment-section h2,
+    .order-confirmation h2 {
+        font-size: 1.3rem;
+    }
+
+    .rating {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .rating label {
+        font-size: 1.5rem;
+    }
+
+    .feedback-section textarea {
+        height: 80px;
+    }
+
+    .status-tracker {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .status-step::after {
+        display: none;
+    }
+}
+
+/* Ensure buttons and inputs fit well on small screens */
+@media (max-width: 480px) {
+    .confirm-btn,
+    .feedback-btn {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+/* About Us Page Styles */
+/* About Us Page Styles */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px;
+  background-image: url('images/about-background.jpg'); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--white-color);
+}
+
+.about-logo {
+  margin-bottom: 20px;
+}
+
+.about-logo .logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-content {
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: slideIn 1s ease-in-out;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--white-color);
+  text-align: center;
+}
+
+.about-mission, .about-team, .about-testimonials {
+  margin-top: 30px;
+}
+
+.about-mission h2, .about-team h2, .about-testimonials h2 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-mission p, .about-testimonials p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--white-color);
+  text-align: center;
+}
+
+/* Team Section */
+.team-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  text-align: center;
+  width: 200px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.team-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-card h3 {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.team-card p {
+  font-size: 1rem;
+  color: var(--white-color);
+}
+
+/* Testimonials Section */
+.testimonials-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--white-color);
+}
+
+.testimonial-card h4 {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-top: 10px;
+  text-align: right;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding: 10px;
+  }
+
+  .team-wrapper, .testimonials-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
