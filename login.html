@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - BiteBuzz</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+      <img src="images/final logo.png" alt="BiteBuzz Logo" class="logo animated-logo">
+      <h1 class="fade-in">Welcome Back!</h1>
+      <h2 class="fade-in" style="color: #ff9900; font-family: Arial, sans-serif;">Login to BiteBuzz</h2>
+
+      <form id="login-form" action="login.php" method="POST">
+        <div class="input-group slide-in">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="username" name="username" placeholder="Enter Your Username" autocomplete="username" required>
+        </div>
+        <div class="input-group slide-in">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="password" name="password" placeholder="Enter Your Password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn-scale" id="login-btn">Login</button>
+      </form>
+
+      <p><a href="password-reset.html">Change Password</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
