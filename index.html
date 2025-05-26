@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiteBuzz</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+  <div class="welcome-container">
+    <img src="images/final logo.png" alt="BiteBuzz Logo" class="logo">
+    <h1>Welcome to BiteBuzz!</h1>
+    <p>Your favorite meals, delivered fast and fresh.</p>
+    <form id="signup-form" action="signup.php" method="post" autocomplete="on">
+      <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="username" name="username" placeholder="Username" autocomplete="username" required>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-phone"></i>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" autocomplete="tel" required>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="password" name="password" placeholder="Set Your Password" autocomplete="new-password" required>
+      </div>
+      <button type="submit">Sign Up to Order</button>
+    </form>
+    <p>Already a customer? <a href="login.html">Login</a></p>
+    <p><a href="admin/login.html">Admin Dashboard</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
